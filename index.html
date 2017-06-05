@@ -56,9 +56,14 @@ app.controller('TaskCtrl', function($scope) {
             if (!x.done) $scope.taskList.push(x);
         });
     };
-	
+	$scope.edit = function() {
+        var oldList = $scope.taskList;
+        $scope.taskList = [];
+       
+    };
    
 });
+	
 </script>
 
 </body>
