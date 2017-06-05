@@ -98,10 +98,11 @@ app.controller('TaskCtrl', function($scope) {
         $scope.taskList = [];
         angular.forEach(oldList, function(x) {
 			
-            if (!x.done) $scope.taskList.push(x);
+          if (x.done) {  $scope.taskList.push(x);
 			x.edit = true;
+			}
 			
-			if (x.done) $scope.taskList.push(x);
+			if (!x.done) $scope.taskList.push(x);
 			
         });
        
