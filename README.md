@@ -10,7 +10,7 @@ Screenshots Below.
 
 
 
-![Alt text](./Task List screenshot 1.tiff?raw=true "Screen Shot 1")
+![Alt text](https://github.com/sateeshpeetha/task/ss1.tiff)
 
 
 Simple Angular JS APP.
