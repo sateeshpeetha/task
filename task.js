@@ -134,32 +134,18 @@ app.controller('TaskCtrl', function($scope) {
        
     };
 	
-	$scope.editUpdate = function(task) {
-		
-      
-        
+  $scope.editUpdate = function(task) {
+	    
 		if ( event.which == 13 ) {
-			
-	        var oldList = $scope.taskList;
-	        $scope.taskList = [];
-			
-			  angular.forEach(oldList, function(x) {
-			
-				  if (task.x.$$hashKey == x.$$hashKey ) {
-					
-					  x.taskText = task.x.taskText;
-					  x.edit     = false;
-					  x.done     = false;
-				  	$scope.taskList.push(x);
-					
-				  }
-				  else $scope.taskList.push(x);
+		  task.x.edit     = false;
+		  task.x.done     = false;
+	      }		
 		
-		  });
-			
-		}
 		
 		$scope.masterSelect = false;
+       
+	   
+    };	
        
     };
    
