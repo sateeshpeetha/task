@@ -38,13 +38,20 @@
 		   <div class="form-group">
 	  			
 	  			 <input type="checkbox" ng-model="masterSelect" ng-click="selectAll(this)" class="lead">
-				 <input type="text" ng-model="taskInput" size="80" placeholder="Add New Task here"  class="form-control"/>
+				 <input type="text" ng-model="taskInput" size="80" placeholder="Add New Task here"  class="form-control"/ ng-keyup="addNew(this)" >
+				 
 				 
 		   </div>
 		   <input type="submit" value="Add Task" class="btn btn-default"/>
 		   
+  		 <div class="alert alert-danger alert-dismissable" ng-show="Error" style="margin-top:15px">
+  		   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  		! Duplicate task or Empty task. Please try again. 
+  		  </div>
+		   
 		 </form>
-		  
+		 
+		
         
 		
 		
@@ -54,8 +61,8 @@
 		   
 		       <div ng-repeat="x in taskList" style="padding:0px;margin:0px;margin-left:16px">
 				  
-					 <input type="checkbox" ng-model="x.done" class="lead" > 
-			         <span ng-bind="x.taskText" ng-hide="x.edit"></span> 
+					 <input type="checkbox" ng-model="x.done" class="lead" ng-hide="x.filter" > 
+			         <span ng-bind="x.taskText" ng-hide="x.edit || x.filter"></span> 
 					 <div ng-show="x.edit">
 					 <input type="text" ng-model="x.taskText"  size="80" ng-keypress="editUpdate(this)" aria-describedby="helpBlock"> 
 					 <span id="helpBlock" class="help-block"> Edit task and presss enter to save. </span>
@@ -73,7 +80,7 @@
     </div>
 
   </div>
-	</div>
+</div>
 
 <script src="./task.js"></script>
 		
