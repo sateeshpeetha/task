@@ -8,7 +8,7 @@ app.controller('TaskCtrl', function($scope) {
        
 		$scope.isDuplicate($scope.taskInput, function(dup){
 			
-			console.log(dup,$scope.taskList);
+			
 			
 			if(dup) {
 				$scope.Error = true;
