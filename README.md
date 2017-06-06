@@ -10,7 +10,7 @@ Screenshots Below.
 
 
 
-![Alt text](https://github.com/sateeshpeetha/task/ss1.tiff)
+![Alt text](https://sateeshpeetha.github.io/task/ss1.tiff)
 
 
 Simple Angular JS APP.
