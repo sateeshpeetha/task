@@ -6,6 +6,12 @@ Simple UI App to add, delete, update, and list tasks. No persistent storage or s
 
 Checkout the live demo here:  https://sateeshpeetha.github.io/task/
 
+Screenshots Below.
+
+
+
+![Alt text](./Task List screenshot 1.tiff?raw=true "Screen Shot 1")
+
 
 Simple Angular JS APP.
 
