@@ -1,47 +1,67 @@
 var app = angular.module('myApp', []); 
 app.controller('TaskCtrl', function($scope) {
-    $scope.taskList = [{taskText:'Eat Breakfast', done:false , edit : false, filter:false }];
+    $scope.taskList = [{taskText:'Eat Breakfast', done:false , edit : false, filter:false   }];
 	$scope.Error = false;
-
-    $scope.taskAdd = function() {
-		
-        var oldList = $scope.taskList;
-        $scope.taskList = [];
-		
-		
-		oldList.push({taskText:$scope.taskInput, done:false, edit:false , filter:false });
-		
-		
-		
-        angular.forEach(oldList, function(x) {
-			
-             x.filter = false;
-			
-		
-			 
- 			if ( x.taskText.toLowerCase() == $scope.taskInput.toLowerCase() ) {
- 				
-				if ( x.taskText == $scope.taskInput ) {
-					$scope.taskInput = "";
-					$scope.Error = true;
-					
-				}
-				else  $scope.taskList.push(x);
-				
-				
- 			}
-			else {
-				 $scope.taskList.push(x);
-			}
-			
-        });
-		
 	
+	$scope.taskAdd = function() {
 		
-		
+       
+		$scope.isDuplicate($scope.taskInput, function(dup){
+			
+			console.log(dup,$scope.taskList);
+			
+			if(dup) {
+				$scope.Error = true;
+				$scope.taskInput = "";
+				
+				
+			}
+			else
+			{
+				$scope.taskList.push({taskText:$scope.taskInput, done:false, edit:false , filter:false });
+				$scope.taskInput = "";
+			}
+		});
+	       
 		
     };
 	
+	
+	$scope.isDuplicate = function(inp,callback) {
+		
+		var len = $scope.taskList.length;
+		
+		var counter = 0;
+		var dup = false;
+		
+        angular.forEach($scope.taskList, function(x) {
+			
+             x.filter = false;
+			 
+			
+			 
+ 			if ( x.taskText.toLowerCase() == inp.toLowerCase() ) {
+				
+			
+				dup = true;
+				
+				callback(true);
+				
+ 			}
+			else {
+				if ( counter == (len-1) && dup == false ) {
+					
+					callback(false);
+				}
+			} 
+				counter++;
+			
+			
+        });
+		
+		
+		
+	}
 	
 	
 	$scope.addNew = function(task) {
