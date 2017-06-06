@@ -13,6 +13,12 @@ Screenshots Below.
 <img src="https://sateeshpeetha.github.io/task/ss1.jpg">
 </img>
 
+<img src="https://sateeshpeetha.github.io/task/ss2.jpg">
+</img>
+
+<img src="https://sateeshpeetha.github.io/task/ss3.jpg">
+</img>
+
 
 Simple Angular JS APP.
 
