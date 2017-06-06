@@ -22,54 +22,57 @@
 	</head>
 	
 <body ng-app="myApp" ng-controller="TaskCtrl">
+	<br>
+    <br>
+	<h2 class="modal-title" style="text-align:center">Task List</h2>
 
   <div class="modal-dialog modal-lg">
 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-		<table>
-			<tr>
-       <td> <h4 class="modal-title">Task List</h4> </td>
-	   <td>
-   		<form ng-submit="taskAdd()" class="navbar-form navbar-left">
-   			<div class="form-group">
-   		    <input type="text" ng-model="taskInput" size="80" placeholder="Add New Task"  class="form-control"/>
-   			 </div>
-   			<input type="submit" value="Add Task" class="btn btn-default"/>
-	
-    
-   		</form>
-	   </td>
-	</tr>
-	</table>
+		  
+		 <form class="navbar-form navbar-left" role="search" ng-submit="taskAdd()" >
+			
+		   <div class="form-group">
+	  			
+	  			 <input type="checkbox" ng-model="SelectAll" class="lead">
+				 <input type="text" ng-model="taskInput" size="80" placeholder="Add New Task here"  class="form-control"/>
+				 
+		   </div>
+		   <input type="submit" value="Add Task" class="btn btn-default"/>
+		   
+		 </form>
+		  
+        
+		
 		
       </div>
       <div class="modal-body">
 		 
-		       <div ng-repeat="x in taskList" style="padding:0px;margin:0px">
+		   
+		       <div ng-repeat="x in taskList" style="padding:0px;margin:0px;margin-left:16px">
 				  
-					 <input type="checkbox" ng-model="x.done" > 
+					 <input type="checkbox" ng-model="x.done" class="lead" > 
 			         <span ng-bind="x.taskText" ng-hide="x.edit"></span> 
-					 <input type="text" ng-model="x.taskText" ng-show="x.edit" ng-keypress="editUpdate()"> 
-				     <hr style="padding:0px;margin:5px">
+					 <div ng-show="x.edit">
+					 <input type="text" ng-model="x.taskText"  size="80" ng-keypress="editUpdate(this)" aria-describedby="helpBlock"> 
+					 <span id="helpBlock" class="help-block"> Edit task and presss enter to save. </span>
+				     </div>
+				     
 			    </div>
+		
 	    </div>
       <div class="modal-footer">
-  	<button ng-click="remove()">Delete Task</button>
-  	<button ng-click="edit()">Edit Task</button>
+	<div class="btn-toolbar " style="margin-left:13px">	  
+  	<button ng-click="remove()" class="btn btn-default btn-group" >Delete Task</button>
+  	<button ng-click="edit()"  class="btn btn-default btn-group" >Edit Task</button>
+</div>
       </div>
     </div>
 
   </div>
 
-	
-
-
-
-
-  
 
 
 
@@ -88,7 +91,7 @@ app.controller('TaskCtrl', function($scope) {
         var oldList = $scope.taskList;
         $scope.taskList = [];
         angular.forEach(oldList, function(x) {
-			console.log(x);
+			
             if (!x.done) $scope.taskList.push(x);
         });
     };
@@ -98,7 +101,7 @@ app.controller('TaskCtrl', function($scope) {
         $scope.taskList = [];
         angular.forEach(oldList, function(x) {
 			
-          if (x.done) {  $scope.taskList.push(x);
+            if (x.done) {  $scope.taskList.push(x);
 			x.edit = true;
 			}
 			
@@ -108,12 +111,30 @@ app.controller('TaskCtrl', function($scope) {
        
     };
 	
-	$scope.editUpdate = function(event,a) {
+	$scope.editUpdate = function(task) {
 		
-        var oldList = $scope.taskList;
-        //$scope.taskList = [];
-		console.log( event, 'abc');
-       
+      
+        
+		if ( event.which == 13 ) {
+			
+	        var oldList = $scope.taskList;
+	        $scope.taskList = [];
+			
+			  angular.forEach(oldList, function(x) {
+			
+				  if (task.x.$$hashKey == x.$$hashKey ) {
+					
+					  x.taskText = task.x.taskText;
+					  x.edit     = false;
+					  x.done     = false;
+				  	$scope.taskList.push(x);
+					
+				  }
+				  else $scope.taskList.push(x);
+		
+		  });
+			
+		}
        
     };
    
