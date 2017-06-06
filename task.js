@@ -5,15 +5,11 @@ app.controller('TaskCtrl', function($scope) {
 	
 	$scope.taskAdd = function() {
 		
-       
-		$scope.isDuplicate($scope.taskInput, function(dup){
-			
-			
+ 		$scope.isDuplicate($scope.taskInput, function(dup){
 			
 			if(dup) {
 				$scope.Error = true;
 				$scope.taskInput = "";
-				
 				
 			}
 			else
@@ -24,7 +20,7 @@ app.controller('TaskCtrl', function($scope) {
 		});
 	       
 		
-    };
+    };  // end of taskAdd
 	
 	
 	$scope.isDuplicate = function(inp,callback) {
@@ -37,15 +33,13 @@ app.controller('TaskCtrl', function($scope) {
 		if ( len == 0)
 			callback(false);
 		else {
-        angular.forEach($scope.taskList, function(x) {
+        angular.forEach($scope.taskList, function(l) {
 			
-             x.filter = false;
+             l.filter = false;
 			 
-			
-			 
- 			if ( x.taskText.toLowerCase() == inp.toLowerCase() ) {
+ 			if ( l.taskText.toLowerCase() == inp.toLowerCase() ) {
 				
-			
+		     
 				dup = true;
 				
 				callback(true);
@@ -65,7 +59,44 @@ app.controller('TaskCtrl', function($scope) {
 		
 		
 		
+	}  // end of Is Duplicate
+	
+	
+	$scope.isUpdDuplicate = function(inp,callback) {
+		
+		var len = $scope.taskList.length;
+		
+		var counter = 0;
+		var dup = false;
+		
+		if ( len == 0)
+			callback(false);
+		else {
+        angular.forEach($scope.taskList, function(l) {
+			
+             l.filter = false;
+			
+ 			if ( ( l.taskText.toLowerCase() == inp.taskText.toLowerCase() )  && ( l.$$hashKey != inp.$$hashKey ) ) {
+			
+				dup = true;
+				callback(true);
+			   	
+ 			}
+			else {
+				if ( counter == (len-1) && dup == false ) {
+					
+					callback(false);
+				}
+			} 
+				counter++;
+			
+			
+        });
 	}
+		
+		
+		
+	}  // end of Is update Duplicate
 	
 	
 	$scope.addNew = function(task) {
@@ -91,7 +122,7 @@ app.controller('TaskCtrl', function($scope) {
 		
 		  });
 		  
-		}
+		} // end of add new task
        
    
     $scope.remove = function() {
@@ -102,7 +133,7 @@ app.controller('TaskCtrl', function($scope) {
             if (!x.done) $scope.taskList.push(x);
         });
 		$scope.masterSelect = false;
-    };
+    };  // end of remove
 	
 	$scope.edit = function() {
 		
@@ -112,13 +143,14 @@ app.controller('TaskCtrl', function($scope) {
 			
             if (x.done) {  $scope.taskList.push(x);
 			x.edit = true;
+			x.old  = x.taskText;
 			}
 			
 			if (!x.done) $scope.taskList.push(x);
 			
         });
        
-    };
+    };  // end of edit
 	
 	$scope.selectAll = function(checkbox) {
 		
@@ -132,21 +164,30 @@ app.controller('TaskCtrl', function($scope) {
 			
         });
        
-    };
+    };  // end of  update checkboxes
 	
-  $scope.editUpdate = function(task) {
+	$scope.editUpdate = function(task) {
 	    
-		if ( event.which == 13 ) {
-		  task.x.edit     = false;
-		  task.x.done     = false;
-	      }		
-		
-		
-		$scope.masterSelect = false;
-       
 	   
-    };	
-       
-    };
+ 	    if ( event.which == 13 ) {
+		$scope.isUpdDuplicate(task.x, function(dup){
+			
+			if(dup) {
+				$scope.Error = true;
+				$scope.taskInput = "";
+				
+			}
+			else
+			{
+	  		  task.x.edit     = false;
+	  		  task.x.done     = false;
+			}
+		});
+		$scope.masterSelect = false;
+	   
+	   }	
+			
+	   
+    }; // end of inline edit.
    
 });
