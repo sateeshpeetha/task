@@ -10,7 +10,7 @@ Screenshots Below.
 
 
 
-<img src="https://sateeshpeetha.github.io/task/ss1.tiff">
+<img src="https://sateeshpeetha.github.io/task/ss1.jpeg">
 </img>
 
 
