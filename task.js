@@ -34,6 +34,9 @@ app.controller('TaskCtrl', function($scope) {
 		var counter = 0;
 		var dup = false;
 		
+		if ( len == 0)
+			callback(false);
+		else {
         angular.forEach($scope.taskList, function(x) {
 			
              x.filter = false;
@@ -58,6 +61,7 @@ app.controller('TaskCtrl', function($scope) {
 			
 			
         });
+	}
 		
 		
 		
