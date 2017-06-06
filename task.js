@@ -181,6 +181,7 @@ app.controller('TaskCtrl', function($scope) {
 			{
 	  		  task.x.edit     = false;
 	  		  task.x.done     = false;
+		          $scope.Error    = false;
 			}
 		});
 		$scope.masterSelect = false;
