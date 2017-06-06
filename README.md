@@ -9,7 +9,7 @@ Simple UI App to add, delete, update, and list tasks. No persistent storage or s
 ### Original requirements here :  https://sateeshpeetha.github.io/task/Requirements.pdf
 
 ### This app depends on three open source libraries mentioned below.
-#### Jquery,Bootstrap, AngularJS which provides abstractions to HTML and CSS functionality.
+#### Jquery,Bootstrap, AngularJS which provides abstractions for rapid prototyping and development.
 
 #### Sample Screen shots below.
 
