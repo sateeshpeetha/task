@@ -169,7 +169,7 @@ app.controller('TaskCtrl', function($scope) {
 	$scope.editUpdate = function(task) {
 	    
 	   
- 	    if ( event.which == 13 ) {
+ 	    if ( event.which == 13 && task.x.taskText != "") {
 		$scope.isUpdDuplicate(task.x, function(dup){
 			
 			if(dup) {
@@ -188,7 +188,10 @@ app.controller('TaskCtrl', function($scope) {
 	   
 	   }	
 			
-	   
+	    if (task.x.taskText == "") {
+		 
+	   	$scope.Error = true;
+	   }	
     }; // end of inline edit.
    
 });
