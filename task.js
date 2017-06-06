@@ -1,13 +1,75 @@
 var app = angular.module('myApp', []); 
 app.controller('TaskCtrl', function($scope) {
-    $scope.taskList = [{taskText:'Eat Breakfast', done:false , edit : false}];
+    $scope.taskList = [{taskText:'Eat Breakfast', done:false , edit : false, filter:false }];
+	$scope.Error = false;
 
     $scope.taskAdd = function() {
-        $scope.taskList.push({taskText:$scope.taskInput, done:false, edit:false});
-	   
-        $scope.taskInput = "";
+		
+        var oldList = $scope.taskList;
+        $scope.taskList = [];
+		
+		
+		oldList.push({taskText:$scope.taskInput, done:false, edit:false , filter:false });
+		
+		
+		
+        angular.forEach(oldList, function(x) {
+			
+             x.filter = false;
+			
+		
+			 
+ 			if ( x.taskText.toLowerCase() == $scope.taskInput.toLowerCase() ) {
+ 				
+				if ( x.taskText == $scope.taskInput ) {
+					$scope.taskInput = "";
+					$scope.Error = true;
+					
+				}
+				else  $scope.taskList.push(x);
+				
+				
+ 			}
+			else {
+				 $scope.taskList.push(x);
+			}
+			
+        });
+		
+	
+		
+		
+		
     };
-
+	
+	
+	
+	$scope.addNew = function(task) {
+		
+    		
+	        var oldList = $scope.taskList;
+	        $scope.taskList = [];
+			
+			  angular.forEach(oldList, function(x) {
+				  
+			
+				  if ( task.taskInput.toLowerCase() == (x.taskText.substr(0,task.taskInput.length)).toLowerCase() ) {
+					  
+					  x.filter = false;
+				  	  $scope.taskList.push(x); 
+				  }	 
+				  else {
+				  	
+					  x.filter = true;
+					  $scope.taskList.push(x); 
+				  }
+				  
+		
+		  });
+		  
+		}
+       
+   
     $scope.remove = function() {
         var oldList = $scope.taskList;
         $scope.taskList = [];
@@ -15,6 +77,7 @@ app.controller('TaskCtrl', function($scope) {
 			
             if (!x.done) $scope.taskList.push(x);
         });
+		$scope.masterSelect = false;
     };
 	
 	$scope.edit = function() {
@@ -71,6 +134,8 @@ app.controller('TaskCtrl', function($scope) {
 		  });
 			
 		}
+		
+		$scope.masterSelect = false;
        
     };
    
