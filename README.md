@@ -28,7 +28,7 @@ Functionality.
 
 User can add new task. While adding list will be updated with matching tasks dynamically. Duplicate tasks are not added and warning alert will be displayed.
 
-User can edit single or multiple tasks inline edit.
+User can edit single or multiple tasks using inline edit.
 
 User can select multiple or all tasks and perform either delete or update operations.
 
