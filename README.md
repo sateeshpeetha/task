@@ -37,7 +37,7 @@ Single page App to manage (add, delete, update, and list) tasks. No persistent s
 #### Controller: TaskCtl
 #### Template task.html
 
-<img src="https://sateeshpeetha.github.io/task/APP.jpg">
+<img src="https://sateeshpeetha.github.io/task/APPD.jpg">
 </img>
 
 
