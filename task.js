@@ -6,17 +6,13 @@
 
 var app = angular.module('myApp', []);
 
-
-
-
 //app.controller('TaskCtrl', 
 
 function TaskCtrl($scope, $element, $attrs) {
   $scope.taskList = [{
     taskText: 'Eat Breakfast',
     done: false,
-    edit: false,
-    filter: false
+    edit: false
   }];
   $scope.Error = false;
 
@@ -32,8 +28,7 @@ function TaskCtrl($scope, $element, $attrs) {
         $scope.taskList.push({
           taskText: $scope.taskInput,
           done: false,
-          edit: false,
-          filter: false
+          edit: false
         });
         $scope.taskInput = "";
       }
@@ -55,13 +50,8 @@ function TaskCtrl($scope, $element, $attrs) {
       else {
         angular.forEach($scope.taskList, function(l) {
 
-          l.filter = false;
-
           if (l.taskText.toLowerCase() == inp.toLowerCase()) {
-
-
             dup = true;
-
             callback(true);
 
           } else {
@@ -72,13 +62,12 @@ function TaskCtrl($scope, $element, $attrs) {
           }
           counter++;
 
-
         });
       }
 
 
 
-    } // end of Is Duplicate
+    }; // end of Is Duplicate
 
 
   $scope.isUpdDuplicate = function(inp, callback) {
@@ -93,7 +82,7 @@ function TaskCtrl($scope, $element, $attrs) {
       else {
         angular.forEach($scope.taskList, function(l) {
 
-          l.filter = false;
+     
 
           if ((l.taskText.toLowerCase() == inp.taskText.toLowerCase()) && (l.$$hashKey != inp.$$hashKey)) {
 
@@ -114,7 +103,7 @@ function TaskCtrl($scope, $element, $attrs) {
 
 
 
-    } // end of Is update Duplicate
+    }; // end of Is update Duplicate
 
 
 
