@@ -28,6 +28,12 @@ Single page App to manage (add, delete, update, and list) tasks. No persistent s
 ` <script src="task.js"></script>`
 
 
+## High Level App Overview
+
+<img src="https://sateeshpeetha.github.io/task/APP.jpg">
+</img>
+
+
 #### Sample Screen shots below.
 
 
