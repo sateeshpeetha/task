@@ -27,6 +27,11 @@ Single page App to manage (add, delete, update, and list) tasks. No persistent s
 
 #### add task-ct tag to your app.
 `<task-ct></task-ct>`
+##### or you can include in other html tags like div, p, span etc as shown below.
+`<div task-ct></div>`
+###### or
+`<p task-ct></p>`
+
 ####  add script tag.
 ` <script src="task.js"></script>`
 
