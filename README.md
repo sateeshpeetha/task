@@ -33,7 +33,7 @@ Single page App to manage (add, delete, update, and list) tasks. No persistent s
 
 ## High Level App Overview
 
-#### Component: taskCt
+#### Component: taskCt which translates into html tag <task-ct>
 #### Controller: TaskCtl
 #### Template task.html
 
