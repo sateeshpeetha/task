@@ -117,30 +117,6 @@ function TaskCtrl($scope, $element, $attrs) {
     } // end of Is update Duplicate
 
 
-  $scope.addNew = function(task) {
-
-
-      var oldList = $scope.taskList;
-      $scope.taskList = [];
-
-      angular.forEach(oldList, function(x) {
-
-
-        if (task.taskInput.toLowerCase() == (x.taskText.substr(0, task.taskInput.length)).toLowerCase()) {
-
-          x.filter = false;
-          $scope.taskList.push(x);
-        } else {
-
-          x.filter = true;
-          $scope.taskList.push(x);
-        }
-
-
-      });
-
-    } // end of add new task
-
 
   $scope.remove = function() {
     var oldList = $scope.taskList;
