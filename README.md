@@ -11,7 +11,7 @@ Single page App to manage (add, delete, update, and list) tasks. No persistent s
 ### This app depends on three open source libraries mentioned below.
 #### Jquery,Bootstrap, AngularJS which provides abstractions(CSS and Javascript) for rapid prototyping and development.
 
-### Instruction to use it your app.
+### Instruction to use it in your app.
 ### Just download the task.html and task.js files. Example shown below.
 #### add task-ct tag to your app.
 `<task-ct></task-ct>`
