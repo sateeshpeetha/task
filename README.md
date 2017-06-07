@@ -33,6 +33,10 @@ Single page App to manage (add, delete, update, and list) tasks. No persistent s
 
 ## High Level App Overview
 
+#### Component: taskCt
+#### Controller: TaskCtl
+#### Template task.html
+
 <img src="https://sateeshpeetha.github.io/task/APP.jpg">
 </img>
 
@@ -53,11 +57,9 @@ Single page App to manage (add, delete, update, and list) tasks. No persistent s
 </img>
 
 
-### Simple Angular JS single page APP.
 
-One controler TaskCtrl.
 
-Functionality.
+## Functionality.
 
 User can add new task. While adding list will be updated with matching tasks dynamically. Duplicate tasks are not added and warning alert will be displayed.
 
