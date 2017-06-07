@@ -1,3 +1,9 @@
+// Module: task controller app using angular js. You need to keep this to use it in your app as per licence agreement.
+// Author Sateesh Peetha
+// BLog: http://tech.dingg.org
+// Connect with him on LinkedIn at https://www.linkedin.com/in/sateeshpeetha/
+// or at angel.co here https://angel.co/sateesh-peetha
+
 var app = angular.module('myApp', []);
 
 
