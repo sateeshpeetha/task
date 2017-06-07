@@ -1,7 +1,7 @@
 # Task
 ## Task Example
 
-Single page App to manage (add, delete, update, and list) tasks. No persistent storage or server API implemented. UI template is best suits chrome, firefox, and IE 9+. Can be extended to include device specific template. This is single page app. No routes or server API implemented.
+Single page App to manage (add, delete, update, and list) tasks. No persistent storage or server API implemented. UI template best suits chrome, firefox, and IE 9+. Can be extended to include device specific template. This is single page app. No routes or server API implemented.
 
 
 ### Checkout the live demo here:  https://sateeshpeetha.github.io/task/
