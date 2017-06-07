@@ -16,11 +16,14 @@ Single page App to manage (add, delete, update, and list) tasks. No persistent s
 
 #### add links to external libraries in the header section. Bootsrap and Jquery may not be required for this app. CSS can be messy sometimes when used in different devices.
 
-`<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous">
-  </script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>`
+#### bootstrap css file
+`<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">`
+#### jquery
+`<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>`
+#### bootstrap js file
+`<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>`
+#### Angular JS
+`<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>`
 
 #### add task-ct tag to your app.
 `<task-ct></task-ct>`
