@@ -1,5 +1,11 @@
 var app = angular.module('myApp', []); 
-app.controller('TaskCtrl', function($scope) {
+
+
+
+
+//app.controller('TaskCtrl', 
+
+function TaskCtrl($scope, $element, $attrs) {
     $scope.taskList = [{taskText:'Eat Breakfast', done:false , edit : false, filter:false   }];
 	$scope.Error = false;
 	
@@ -194,4 +200,14 @@ app.controller('TaskCtrl', function($scope) {
 	   }	
     }; // end of inline edit.
    
-});
+}
+
+//);
+
+
+app.component('taskCt', {
+  	
+	templateUrl: 'task.html',
+	  controller: TaskCtrl
+	
+  });
