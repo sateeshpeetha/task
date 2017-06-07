@@ -61,7 +61,7 @@ Single page App to manage (add, delete, update, and list) tasks. No persistent s
 
 ## Functionality.
 
-User can add new task. While adding list will be updated with matching tasks dynamically. Duplicate tasks are not added and warning alert will be displayed.
+User can add new task. While adding list will be updated with matching tasks dynamically(implicit search functionality). Duplicate tasks are not added and warning alert will be displayed.
 
 User can edit single or multiple tasks using inline edit.
 
