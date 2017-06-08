@@ -36,7 +36,7 @@
           <input type="checkbox" ng-model="x.done" class="lead">
           <span ng-bind="x.taskText" ng-hide="x.edit"></span>
           <div ng-show="x.edit">
-            <input type="text" ng-model="x.taskText" size="80" ng-keypress="editUpdate(this)" aria-describedby="helpBlock">
+            <input type="text" ng-model="x.taskText" size="80" ng-keypress="editUpdate(this,$event)" aria-describedby="helpBlock">
             <span id="helpBlock" class="help-block"> Edit task and presss enter to save. </span>
           </div>
 
