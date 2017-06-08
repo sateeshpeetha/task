@@ -149,11 +149,9 @@ function TaskCtrl($scope, $element, $attrs) {
 
   }; // end of  update checkboxes
 
-  $scope.editUpdate = function(task) {
+  $scope.editUpdate = function(task,e) {
 
-    console.log(task,event);
-
-    if (event.which == 13 && task.x.taskText !== "") {
+    if (e.which == 13 && task.x.taskText !== "") {
       $scope.isUpdDuplicate(task.x, function(dup) {
 
         if (dup) {
