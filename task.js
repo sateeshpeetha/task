@@ -151,7 +151,7 @@ function TaskCtrl($scope, $element, $attrs) {
 
   $scope.editUpdate = function(task) {
 
-    console.log(task,event,e);
+    console.log(task,event);
 
     if (event.which == 13 && task.x.taskText !== "") {
       $scope.isUpdDuplicate(task.x, function(dup) {
